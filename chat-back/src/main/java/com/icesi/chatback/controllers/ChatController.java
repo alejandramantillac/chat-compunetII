@@ -25,7 +25,7 @@ public class ChatController {
     private ChatService service;
 
     @PostMapping("path")
-    public ResponseEntity <?> postMethodName(
+    public ResponseEntity<?> postMethodName(
             @RequestBody Message entity, @ModelAttribute Chat chat) {
 
         service.sendMessage(chat.getFrom(), chat.getDest(), entity);
@@ -37,6 +37,4 @@ public class ChatController {
     public ResponseEntity<?> getChat(@ModelAttribute Chat chat) {
         return ResponseEntity.ok(service.getChat(chat.getFrom(), chat.getDest()));
     }
-    
-    
 }

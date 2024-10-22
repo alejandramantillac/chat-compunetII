@@ -1,12 +1,11 @@
 package com.icesi.chatback.repositories;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.icesi.chatback.model.Chat;
+import com.icesi.chatback.model.Message;
 
-public interface MessageRepository extends JpaRepository<Chat, Long>{
+@Repository
+public interface MessageRepository extends JpaRepository<Message, Long>{
     
-    Optional <Chat> findByFromAndDest(String from, String dest);
 }
